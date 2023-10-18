@@ -1,0 +1,35 @@
+import asyncio
+from aiogram.types import BotCommand
+from logging import basicConfig
+from
+from handlers import (
+    start_router,
+    shop_router,
+    echo_router,
+    pic_router,
+    questions_router
+)
+
+
+async def main():
+    await bot.set_my_commands(
+        [
+            BotCommand(command='start', description='Главная'),
+            BotCommand(command='picture', description='Картинка')
+        ]
+    )
+
+    # роутеры
+    dp.include_router(start_router)
+    dp.include_router(shop_router)
+    dp.include_router(pic_router)
+    dp.include_router(questions_router)
+
+    # в самом конце
+    dp.include_router(echo_router)
+    await dp.start_polling(bot)
+
+
+if __name__ == '__main__':
+    basicConfig(level='INFO')
+    asyncio.run(main())
