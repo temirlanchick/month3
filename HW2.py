@@ -63,18 +63,12 @@ async def show_books(message: types.Message):
     kb = types.ReplyKeyboardRemove()
     await message.answer("Игры в нашем магазине", reply_markup=kb)
 
-
     dp.include_router(shop_router)
     await dp.start_polling(bot)
 
 
 async def main():
     await dp.start_polling(bot)
-
-
-
-
-
 
 
 if __name__ == '__main__':

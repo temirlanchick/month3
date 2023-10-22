@@ -1,7 +1,10 @@
+
 import asyncio
 from aiogram.types import BotCommand
 from logging import basicConfig
-from
+from aiogram import Dispatcher, Bot
+
+from HW1 import dp, bot
 from handlers import (
     start_router,
     shop_router,
@@ -15,7 +18,8 @@ async def main():
     await bot.set_my_commands(
         [
             BotCommand(command='start', description='Главная'),
-            BotCommand(command='picture', description='Картинка')
+            BotCommand(command='picture', description='Картинка'),
+            BotCommand(command='polls', description='Диалог')
         ]
     )
 
