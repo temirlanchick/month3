@@ -23,21 +23,17 @@ async def myinfo(message: types.Message):
     await message.reply(f'Ваш first name {message.from_user.first_name}!')
     await message.reply(f'Ваш username {message.from_user.username}!')
 
+
 @dp.message(Command('picture'))
 async def picture(message: types.Message):
     file = types.FSInputFile('images/EZIO.jpg')
-    await message.answer_photo(file)
-
+    await message.answer_photo(photo=file, caption='Эцио Аудиторе')
 
 
 async def main():
     await dp.start_polling(bot)
 
 
-
 if __name__ == '__main__':
     basicConfig(level='INFO')
     asyncio.run(main())
-
-
-

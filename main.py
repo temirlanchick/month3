@@ -1,4 +1,3 @@
-
 import asyncio
 from aiogram.types import BotCommand
 from logging import basicConfig
@@ -12,14 +11,16 @@ from handlers import (
     pic_router,
     questions_router
 )
+from HW4 import init_db, create_tables, populate_tables, get_all_products
 
 
-async def main():
+async def main(on_startup=None):
     await bot.set_my_commands(
         [
             BotCommand(command='start', description='Главная'),
             BotCommand(command='picture', description='Картинка'),
-            BotCommand(command='polls', description='Диалог')
+            BotCommand(command='ask', description='Диалог'),
+            BotCommand(command='shop', description='Магазин')
         ]
     )
 

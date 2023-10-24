@@ -27,7 +27,7 @@ async def stop_questions(message: types.Message, state: FSMContext):
     await message.answer('До свидания!')
 
 
-@questions_router.message(Command('polls'))
+@questions_router.message(Command('ask'))
 async def start_questions(message: types.Message, state: FSMContext):
     await message.answer('Для того, чтобы остановить, напишите "отмена"')
     await message.answer('Как вас зовут?')
