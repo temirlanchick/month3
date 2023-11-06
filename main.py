@@ -1,7 +1,7 @@
 import asyncio
 from aiogram.types import BotCommand
 from logging import basicConfig
-from aiogram import Dispatcher
+
 
 from HW1 import dp, bot
 from handlers import (
@@ -11,8 +11,7 @@ from handlers import (
     pic_router,
     questions_router,
     scheduler_router,
-
-
+    group_administration_router
 )
 
 
@@ -33,6 +32,7 @@ async def main(on_startup=None):
     dp.include_router(pic_router)
     dp.include_router(questions_router)
     dp.include_router(scheduler_router)
+    dp.include_router(group_administration_router)
     # в самом конце
     dp.include_router(echo_router)
     await dp.start_polling(bot)

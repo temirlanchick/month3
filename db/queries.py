@@ -2,6 +2,7 @@ import sqlite3
 from pathlib import Path
 from pprint import pprint
 
+
 # DBMS - СУБД
 
 
@@ -124,7 +125,6 @@ if __name__ == "__main__":
     pprint(get_all_products())
     # pprint(get_products_by_category(3))
     # pprint(get_products_by_category_name("Манга"))
-
 
 # таблица Categories
 # 1, "Книги", "Книги - это творческая литература",

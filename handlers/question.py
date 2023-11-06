@@ -60,7 +60,7 @@ async def process_age(message: types.Message, state: FSMContext):
 @questions_router.message(F.text, Questions.gender)
 async def process_gender(message: types.Message, state: FSMContext):
     gender = message.text.strip()
-    if (gender.lower() == "мужской" or gender.lower() == "женский"):
+    if gender.lower() == "мужской" or gender.lower() == "женский":
         kb = types.ReplyKeyboardRemove()
         await state.update_data(gender=gender)
         await state.set_state(Questions.country)
